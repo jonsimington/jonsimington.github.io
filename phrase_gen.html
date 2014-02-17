@@ -3,6 +3,10 @@ layout: base
 title: Phrase Generator
 ---
 
+<head>
+  <title>Phrase Generator</title>
+</head>
+
 <!-- Phrase Gen Script -->
 <script src="/static/js/phrase_gen.js"></script>
 
@@ -10,12 +14,12 @@ title: Phrase Generator
 
   <div class="col-md-4">
     <!-- Simple Sentences -->
-    <button onclick="simple_sentence()" class="btn btn-primary btn-large">
+    <button onclick="show_wells('simple_sentence');" class="btn btn-primary btn-large" style="width:100%;height:75px;">
       Generate Simple Sentences [noun verb]
     </button>
-    <br><br>
+    <br>
     <!-- simple sentence well -->
-    <div class="well">
+    <div id="simple_sentence" class="well" style="width=100%;visibility:hidden">
       <script>
         simple_sentence();
       </script>
@@ -25,12 +29,12 @@ title: Phrase Generator
 
   <div class="col-md-4">
     <!-- Medium Sentences -->
-    <button onclick="mid_sentence()" class="btn btn-primary btn-large">
+    <button onclick="show_wells('med_sentence');" class="btn btn-primary btn-large" style="width:100%;height:75px;">
       Generate Medium Sentences <br> [article adjective noun verb]
     </button>
-    <br><br>
+    <br>
     <!-- medium sentence well -->
-    <div class="well">
+    <div id="med_sentence" class="well" style="width=100%;visibility:hidden">
       <script>
         med_sentence();
       </script>
@@ -40,14 +44,14 @@ title: Phrase Generator
 
   <div class="col-md-4">
     <!-- Advanced Sentences -->
-    <button onclick="adv_sentence()" class="btn btn-primary btn-large">
+    <button onclick="show_wells('adv_sentence');" class="btn btn-primary btn-large" style="width:100%;height:75px;">
       Generate Advanced Sentences <br> [subject verb preposition (the) place word]
     </button>
-    <br><br>
+    <br>
     <!-- adv sentence well -->
-    <div class="well">
+    <div id="adv_sentence" class="well" style="width=100%;visibility:hidden;">
       <script>
-        adv();
+        adv_sentence();
       </script>
     </div>
   </div>
