@@ -1,4 +1,4 @@
-function gen_rand()
+function simple_sentence()
 {
   var i,
   uarticle = ["The", "A", "One", "Some", "Any"],
