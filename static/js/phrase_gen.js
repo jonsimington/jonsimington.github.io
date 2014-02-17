@@ -40,7 +40,8 @@ function simple_sentence()
       // if verb ends in s
       if(verb[verbIndex][verb[verbIndex].length - 1] == "s" ||
          verb[verbIndex][verb[verbIndex].length - 1] == "x" ||
-         verb[verbIndex][verb[verbIndex].length - 1] == "h")
+         verb[verbIndex][verb[verbIndex].length - 1] == "h" ||
+         verb[verbIndex][verb[verbIndex].length - 1] == "z")
       {
         verbAddition = "es"
       }
@@ -102,7 +103,8 @@ function med_sentence()
       // if verb ends in s
       if(verb[verbIndex][verb[verbIndex].length - 1] == "s" ||
          verb[verbIndex][verb[verbIndex].length - 1] == "x" ||
-         verb[verbIndex][verb[verbIndex].length - 1] == "h")
+         verb[verbIndex][verb[verbIndex].length - 1] == "h" ||
+         verb[verbIndex][verb[verbIndex].length - 1] == "z")
       {
         verbAddition = "es"
       }
@@ -175,7 +177,8 @@ function adv_sentence()
       // if verb ends in s
       if(verb[verbIndex][verb[verbIndex].length - 1] == "s" ||
          verb[verbIndex][verb[verbIndex].length - 1] == "x" ||
-         verb[verbIndex][verb[verbIndex].length - 1] == "h")
+         verb[verbIndex][verb[verbIndex].length - 1] == "h" ||
+         verb[verbIndex][verb[verbIndex].length - 1] == "z")
       {
         verbAddition = "es"
       }
