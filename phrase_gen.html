@@ -10,16 +10,18 @@ title: Phrase Generator
 <!-- Phrase Gen Script -->
 <script src="/static/js/phrase_gen.js"></script>
 
-<div style="text-align:center;">
+<!-- Page Styling -->
+<link href="/static/css/phrase_gen.css" rel="stylesheet">
 
+<div class="text-center">
   <div class="col-md-4">
     <!-- Simple Sentences -->
-    <button onclick="show_wells('simple_sentence');" class="btn btn-primary btn-large" style="width:100%;height:75px;">
-      Generate Simple Sentences [noun verb]
+    <button id="simp_gen" onclick="simple_sentence();" class="btn btn-primary btn-large">
+      Generate Simple Sentences <br> [noun verb]
     </button>
     <br>
     <!-- simple sentence well -->
-    <div id="simple_sentence" class="well" style="width=100%;">
+    <div id="simple_sentence" class="well">
       <script>
         simple_sentence();
       </script>
@@ -29,12 +31,12 @@ title: Phrase Generator
 
   <div class="col-md-4">
     <!-- Medium Sentences -->
-    <button onclick="show_wells('med_sentence');" class="btn btn-primary btn-large" style="width:100%;height:75px;">
+    <button onclick="show_wells('med_sentence');" class="btn btn-primary btn-large">
       Generate Medium Sentences <br> [article adjective noun verb]
     </button>
     <br>
     <!-- medium sentence well -->
-    <div id="med_sentence" class="well" style="width=100%;">
+    <div id="med_sentence" class="well">
       <script>
         med_sentence();
       </script>
@@ -44,12 +46,12 @@ title: Phrase Generator
 
   <div class="col-md-4">
     <!-- Advanced Sentences -->
-    <button onclick="show_wells('adv_sentence');" class="btn btn-primary btn-large" style="width:100%;height:75px;">
+    <button onclick="show_wells('adv_sentence');" class="btn btn-primary btn-large">
       Generate Advanced Sentences <br> [subject verb preposition (the) place word]
     </button>
     <br>
     <!-- adv sentence well -->
-    <div id="adv_sentence" class="well" style="width=100%;">
+    <div id="adv_sentence" class="well">
       <script>
         adv_sentence();
       </script>
