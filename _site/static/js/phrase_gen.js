@@ -5,6 +5,8 @@ var verb = ["abide","accelerate","accept","accomplish","achieve","acquire","acte
 var uarticle = ["The", "A"];
 var adjective = ["adorable","beautiful","clean","drab","elegant","fancy","glamorous","handsome","long","magnificent","old-fashioned","plain","quaint","sparkling","ugliest","unsightly","wide-eyed","red","orange","yellow","green","blue","purple","gray","black","white","alive","better","careful","clever","dead","easy","famous","gifted","helpful","important","inexpensive","mushy","odd","powerful","rich","shy","tender","uninterested","vast","wrong","angry","bewildered","clumsy","defeated","embarrassed","fierce","grumpy","helpless","itchy","jealous","lazy","mysterious","nervous","obnoxious","panicky","repulsive","scary","thoughtless","uptight","worried","agreeable","brave","calm","delightful","eager","faithful","gentle","happy","jolly","kind","lively","nice","obedient","proud","relieved","silly","thankful","victorious","witty","zealous","broad","chubby","crooked","curved","deep","flat","high","hollow","low","narrow","round","shallow","skinny","square","steep","straight","wide","big","colossal","fat","gigantic","great","huge","immense","large","little","mammoth","massive","miniature","petite","puny","scrawny","short","small","tall","teeny","teeny-tiny","tiny","cooing","deafening","faint","hissing","loud","melodic","noisy","purring","quiet","raspy","screeching","thundering","voiceless","whispering","ancient","brief","early","fast","late","long","modern","old","old-fashioned","quick","rapid","short","slow","swift","young","bitter","delicious","fresh","greasy","juicy","hot","icy","loose","melted","nutritious","prickly","rainy","rotten","salty","sticky","strong","sweet","tart","tasteless","uneven","weak","wet","wooden","yummy","boiling","breeze","broken","bumpy","chilly","cold","cool","creepy","crooked","cuddly","curly","damaged","damp","dirty","dry","dusty","filthy","flaky","fluffy","freezing","hot","warm","wet","abundant","empty","few","full","heavy","light","many","numerous","sparse","substantial"];
 var preposition = ["aboard","about","above","across","after","against","along","amid","among","anti","around","as","at","before","behind","below","beneath","beside","besides","between","beyond","but","by","concerning","considering","despite","down","during","except","excepting","excluding","following","for","from","in","inside","into","like","minus","near","of","off","on","onto","opposite","outside","over","past","per","plus","regarding","round","since","than","through","to","toward","towards","under","underneath","unlike","until","up","upon","versus","via","with","within","without"];
+
+// Simple Sentence consisting of <noun> <verb>
 function simple_sentence()
 {
   //NOUN VERB
@@ -16,15 +18,20 @@ function simple_sentence()
   var space = " ";
   var article = "";
 
+  var div = document.getElementById("simple_sentence");
 
-  for (i = 1; i <= 5; i++) 
+  //clear div upon load
+  div.innerHTML = "";
+
+
+  for (i = 1; i <= 5; i++)
   {
-    uarticleIndex = Math.floor(Math.random() * uarticle.length); 
-    nounIndex = Math.floor(Math.random() * noun.length); 
+    uarticleIndex = Math.floor(Math.random() * uarticle.length);
+    nounIndex = Math.floor(Math.random() * noun.length);
     verbIndex = Math.floor(Math.random() * verb.length);
 
     //changes article to an if the noun begins with a vowel
-    if(noun[nounIndex][0] == "a" || 
+    if(noun[nounIndex][0] == "a" ||
        noun[nounIndex][0] == "e" ||
        noun[nounIndex][0] == "i" ||
        noun[nounIndex][0] == "o" ||
@@ -63,20 +70,21 @@ function simple_sentence()
     if(i != 5)
     {
       //article noun verb
-      document.write(article +
+      div.innerHTML += article +
         space + noun[nounIndex] + space +
-        verb[verbIndex] + verbAddition + ".<br><hr>");
+        verb[verbIndex] + verbAddition + ".<br><hr>";
     }
     else
     {
       //article noun verb
-      document.write(article +
+      div.innerHTML += article +
         space + noun[nounIndex] + space +
-        verb[verbIndex] + verbAddition + ".<br>");
+        verb[verbIndex] + verbAddition + ".<br>";
     }
   }
 }
 
+// Medium Sentence consisting of <article> <adjective> <noun> <verb>
 function med_sentence()
 {
   //article adjective noun verb
@@ -87,15 +95,20 @@ function med_sentence()
   var adjectiveIndex;
   var verbAddition;
 
+  var div = document.getElementById("med_sentence");
+
+  //clear div upon load
+  div.innerHTML = "";
+
   for (i = 1; i <= 5; i++)
   {
-    uarticleIndex = Math.floor(Math.random() * uarticle.length); 
-    nounIndex = Math.floor(Math.random() * noun.length); 
+    uarticleIndex = Math.floor(Math.random() * uarticle.length);
+    nounIndex = Math.floor(Math.random() * noun.length);
     verbIndex = Math.floor(Math.random() * verb.length);
     adjectiveIndex = Math.floor(Math.random() * adjective.length);
 
     //changes article to an if the adjective begins with a vowel
-    if(adjective[adjectiveIndex][0] == "a" || 
+    if(adjective[adjectiveIndex][0] == "a" ||
        adjective[adjectiveIndex][0] == "e" ||
        adjective[adjectiveIndex][0] == "i" ||
        adjective[adjectiveIndex][0] == "o" ||
@@ -132,21 +145,22 @@ function med_sentence()
 
     if(i != 5)
     {
-      document.write(article + space +
-                   adjective[adjectiveIndex] + space + 
-                   noun[nounIndex] + space + 
-                   verb[verbIndex] + verbAddition + ".<br><hr>");
+      div.innerHTML += article + space +
+                   adjective[adjectiveIndex] + space +
+                   noun[nounIndex] + space +
+                   verb[verbIndex] + verbAddition + ".<br><hr>";
     }
     else
     {
-      document.write(article + space +
-                   adjective[adjectiveIndex] + space + 
-                   noun[nounIndex] + space + 
-                   verb[verbIndex] + verbAddition + ".<br>");
+      div.innerHTML += article + space +
+                   adjective[adjectiveIndex] + space +
+                   noun[nounIndex] + space +
+                   verb[verbIndex] + verbAddition + ".<br>";
     }
   }
 }
 
+// Advanced Sentence consisting of <subject> <verb> <preposition> (the) <place word>
 function adv_sentence()
 {
   var i;
@@ -157,10 +171,15 @@ function adv_sentence()
   var verbIndex;
   var verbAddition;
 
+  var div = document.getElementById("adv_sentence");
+
+  //clear div upon load
+  div.innerHTML = "";
+
   for(i = 1; i <= 5; i++)
   {
-    uarticleIndex = Math.floor(Math.random() * uarticle.length); 
-    nounIndex = Math.floor(Math.random() * noun.length); 
+    uarticleIndex = Math.floor(Math.random() * uarticle.length);
+    nounIndex = Math.floor(Math.random() * noun.length);
     nounIndex2 = Math.floor(Math.random() * noun.length);
     verbIndex = Math.floor(Math.random() * verb.length);
     prepositionIndex = Math.floor(Math.random() * preposition.length);
@@ -173,7 +192,7 @@ function adv_sentence()
     }
 
     //changes article to an if the noun begins with a vowel
-    if(noun[nounIndex][0] == "a" || 
+    if(noun[nounIndex][0] == "a" ||
        noun[nounIndex][0] == "e" ||
        noun[nounIndex][0] == "i" ||
        noun[nounIndex][0] == "o" ||
@@ -211,27 +230,20 @@ function adv_sentence()
     if(i != 5)
     {
       //subject verb preposition (the) place word
-    document.write(article + space +
-                   noun[nounIndex] + space + 
+    div.innerHTML += article + space +
+                   noun[nounIndex] + space +
                    verb[verbIndex] + verbAddition + space +
                    preposition[prepositionIndex] + space +
-                   "the" + space + noun[nounIndex2] + ".<br><hr>");
+                   "the" + space + noun[nounIndex2] + ".<br><hr>";
     }
     else
     {
       //subject verb preposition (the) place word
-    document.write(article + space +
-                   noun[nounIndex] + space + 
+    div.innerHTML += article + space +
+                   noun[nounIndex] + space +
                    verb[verbIndex] + verbAddition + space +
                    preposition[prepositionIndex] + space +
-                   "the" + space + noun[nounIndex2] + ".<br>");
+                   "the" + space + noun[nounIndex2] + ".<br>";
     }
   }
-}
-
-//function to show the wells on button click
-function show_wells(id)
-{
-  var divelement = document.getElementById(id);
-  divelement.style.visibility = 'visible';
 }
