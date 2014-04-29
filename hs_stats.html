@@ -1,0 +1,39 @@
+---
+layout: base
+title: <reddit> Hearthstone Tournament v2.0 Statistics
+---
+
+<head>
+  <title>&lt;reddit&gt; Hearthstone Tournament v2.0 Statistics</title>
+</head>
+
+<body>
+  <div class="text-center">
+    <h1>&lt;reddit&gt; Hearthstone Tournament v2.0 Statistics</h1>
+  </div>
+
+  <script>
+    var json = [{"name": "Oss", "wins": 12, "losses": 0},
+                {"name": "Roman", "wins": 2, "losses": 12}];
+    var $table = $('<table/>');
+
+    $.each(json, function(index, value) {
+       //create a row
+       var $row = $('<tr/>');
+
+       //create name column
+       $('<td/>').text(value.name).appendTo($row);
+
+       //create wins column
+       $('<td/>').text(value.wins).appendTo($row);
+
+       //create losses column
+       $('<td/>').text(value.losses).appendTo($row);
+
+       $table.append($row);
+    });
+
+    //append table to the body
+    $('body').append($table);
+    </script>
+</body>
