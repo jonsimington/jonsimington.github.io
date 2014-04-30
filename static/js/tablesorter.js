@@ -1,11 +1,17 @@
-$(document).ready(function()
-    {
-        $("#tourney_stats").tablesorter();
-    }
-);
+var setup_sorter = function(identifier) {
+      $(identifier).tablesorter();
+      $(identifier).bind("sortEnd", function() {
+        var icons = $(identifier + " > thead th i");
+        icons.removeClass().toggleClass("fa fa-arrows-v");
 
-$(document).ready(function()
-    {
-        $("#tourney_stats").tablesorter( {sortList: [[0,0], [1,0], [2,0], [3,0]]} ); 
+        var asc_icons = $(identifier + " .tablesorter-headerAsc i");
+        asc_icons.removeClass().toggleClass("fa fa-long-arrow-up");
+
+        var desc_icons = $(identifier + " .tablesorter-headerDesc i");
+        desc_icons.removeClass().toggleClass("fa fa-long-arrow-down");
+      });
     }
-);
+
+$(function() {
+  setup_sorter("#tourney_stats");
+});
