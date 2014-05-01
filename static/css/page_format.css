@@ -1,6 +1,6 @@
 /* formatting page */
 body { font-family: helvetica, verdana, arial, sans-serif; font-size: 12px; background-color: #efefef; padding: 35px; color: #333;}
-.wrapper { margin: 0; width: 100%; overflow: scroll; border-radius: 0 5px 5px 5px; }
+.wrapper { margin: 0; width: 100%; overflow: hidden; border-radius: 0 5px 5px 5px; }
 a {color: #2C96AF;}
 a:hover { color: #A0B43C; }
 h1 { font-size: 35px; line-height: 24px; }

@@ -17,33 +17,47 @@ title: <reddit> Hearthstone Tournament v2.0 Brackets
 </head>
 
 <body>
-  <div class="text-center">
-    <h1>&lt;reddit&gt; Hearthstone Tournament v2.0 Brackets</h1>
-  </div>
+  <div class="col-g-12">
+    <div class="text-center">
+      <h1>&lt;reddit&gt; Hearthstone Tournament v2.0 Brackets</h1>
+    </div>
 
-  <br>
+    <br>
 
-  <div class="tabbable">
-    <ul id="bracket_tabs" class="nav nav-pills">
-      <li class="active"><a href="#orig_bracket">Original Pairings</a></li>
-      <li><a href="#win_bracket">Winners Bracket</a></li>
-      <li><a href="#lose_bracket">Losers Bracket</a></li>
-    </ul>
+    <div class="tabbable">
+      <ul id="bracket_tabs" class="nav nav-pills">
+        <li class="active"><a href="#orig_bracket">Original Pairings</a></li>
+        <li><a href="#win_bracket">Winners Bracket</a></li>
+        <li><a href="#lose_bracket">Losers Bracket</a></li>
+      </ul>
 
-    <div class="tab-content">
-      <div class="tab-pane active" id="orig_bracket">
-        Empty, for now.
-      </div>
-      <div class="tab-pane" id="win_bracket">
-        Empty, for now.
-      </div>
-      <div class="tab-pane" id="lose_bracket">
-        Empty, for now.
+      <div class="tab-content">
+        <div class="tab-pane active" id="orig_bracket">
+          <div class="wrapper">
+            <div data-gracket='[
+                [
+                  [ {"name" : "Romand", "id" : "romand", "seed" : 2}, {"name" : "Sqwarlock", "id" : "sqwarlock", "seed" : 7} ],
+                  [ {"name" : "Xyndra", "id" : "xyndra", "seed" : 9}, {"name" : "Oss", "id" : "oss", "seed" : 1}],
+                  [ {"name" : "Simrik", "id" : "simrik", "seed" : 6}, {"name" : "Deathcrawler", "id" : "deathcrawler", "seed" : 3} ],
+                  [ {"name" : "Qoof", "id" : "qoof", "seed" : 12}, {"name" : "Tymoshenko", "id" : "tymoshenko", "seed" : 5}],
+                  [ {"name" : "Berto", "id" : "berto", "seed" : 4}, {"name" : "Yuckster", "id" : "yuckster", "seed" : 11} ],
+                  [ {"name" : "Morecheeba", "id" : "morecheeba", "seed" : 8}, {"name" : "Selris", "id" : "selris", "seed" : 10}]
+                ]
+              ]'>
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane" id="win_bracket">
+          Empty, for now.
+        </div>
+        <div class="tab-pane" id="lose_bracket">
+          Empty, for now.
+        </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="/static/js/gracket_setup.js"></script>
+
   </div>
-
-  <script type="text/javascript" src="/static/js/gracket_setup.js"></script>
-
-
 </body>
