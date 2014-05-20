@@ -8,3 +8,8 @@ h1 small { font-size: 14px; font-weight: normal;}
 h1 a {text-decoration: none; text-transform: uppercase; text-shadow: 0 1px 0 #fff; }
 body > h3, .container-secondary > h3 { margin: 45px 0 0; font-size: 16px; background: #fff; display: inline-block; padding: 15px 25px 15px 15px; border-radius: 5px 5px 0 0}
 body > h3 p, .container-secondary > h3 > p { color: #CCCCCC; font-size: 14px; font-weight: normal; margin: 2px 0 0; }
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
