@@ -4,12 +4,10 @@ title: <reddit> Hearthstone Tournament v2.0 Brackets
 ---
 
 <head>
-  <!-- Gracket Styling -->
-  <link rel="stylesheet" href="/static/css/gracket.css">
-
-  <!-- Gracket Script -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script type="text/javascript" src="/static/js/gracket.js"></script>
+  <!-- Bracket Scripts and Styling -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.bracket.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/css/jquery.bracket.min.css" />
 
 
   <!-- Tab script -->
@@ -21,51 +19,63 @@ title: <reddit> Hearthstone Tournament v2.0 Brackets
 <body>
   <div class="col-lg-12">
     <div class="text-center">
-      <h1>&lt;reddit&gt; Hearthstone Tournament v2.0 Brackets</h1>
+      <h1>&lt;reddit&gt; Hearthstone Tournament v2.0 Double Elimination Bracket</h1>
     </div>
 
     <br>
 
-    <h1>Winners Bracket</h1>
-    <div class="wrapper">
-      <div data-gracket='
-        [
-          [
-            [ {"name" : "Romand", "id" : "romand", "seed" : 2}, {"name" : "Sqwarlock", "id" : "sqwarlock", "seed" : 7} ],
-            [ {"name" : "Xyndra", "id" : "xyndra", "seed" : 9}, {"name" : "Oss", "id" : "oss", "seed" : 1} ],
-            [ {"name" : "Simrik", "id" : "simrik", "seed" : 6}, {"name" : "Deathcrawler", "id" : "deathcrawler", "seed" : 3} ],
-            [ {"name" : "Qoof", "id" : "qoof", "seed" : 12}, {"name" : "Tymoshenko", "id" : "tymoshenko", "seed" : 5} ],
-            [ {"name" : "Morecheeba", "id" : "morecheeba", "seed" : 8}, {"name" : "Selris", "id" : "selris", "seed" : 10} ],
-            [ {"name" : "Betenoire", "id" : "betenoire", "seed" : 13}, {"name" : "Clammeat", "id" : "clammeat", "seed" : 14} ],
-            [ {"name" : "Berto", "id" : "berto", "seed" : 4}, {"name" : "Yuckster", "id" : "yuckster", "seed" : 11} ]
+    <div class="col-lg-3"></div>
+    <div class="text-center col-lg-6">
+      <h5>*Note: Due to the tournament not having 16 players, the library I use to
+        generate this bracket is not correct as it does not allow for bye games.
+        The next tournament we hold will be guaranteed to have 2<sup>n</sup> competitors,
+        and thus a pretty bracket to look at.</h5>
+    </div>
+    <div class="col-lg-3"></div>
+
+    <!-- Script containing bracket -->
+    <div id="bracket">
+      <script type="text/javascript">
+        $(document).ready(function() {
+
+         var tournament = {
+          teams : [
+            /*
+            PLAYERS:
+            */
+            ["Romand",  "Sqwarlock" ],
+            ["Xyndra",  "Oss" ],
+            ["Simrik",  "Deathcrawler" ],
+            ["Qoof",  "Tymoshenko" ],
+            ["Morecheeba",  "Selris"],
+            ["Betenoire", "Clammeat"],
+            ["Berto", "Yuckster"],
+            ["BYE", "BYE"]
           ],
-          [
-            [ {"name" : "Romand", "id" : "romand", "seed" : 2}, {"name" : "Xyndra", "id" : "xyndra", "seed" : 9} ],
-            [ {"name" : "Simrik", "id" : "simrik", "seed" : 6}, {"name" : "Tymoshenko", "id" : "tymoshenko", "seed" : 5} ],
-            [ {"name" : "Betenoire", "id" : "betenoire", "seed" : 13}, {"name" : "Morecheeba", "id" : "morecheeba", "seed" : 8} ],
-            [ {"name" : "Berto", "id" : "berto", "seed" : 4}, {"name" : "BYE", "id" : "bye", "seed" : 20} ]
-          ]
-        ]'>
-      </div>
+          results : [[ /* WINNER BRACKET */
+            /*ROUND 1*/[[3,0], [3,1], [3,1], [2,3], [3,0], [3,0], [3,0], [0,0]],
+            /*ROUND 2*/[[3,0], [1,3], [3,1], [3,0]],
+            /*ROUND 3*/[[,], [,]],
+            /*ROUND 4*/[[,]]
+          ], [         /* LOSER BRACKET */
+            [[3,0], [1,3], [3,2], [3,0]],
+            [[,], [,], [,], [,]],
+            [[,], [,]],
+            [[,], [,]],
+            [[,]],
+            [[,]]
+          ], [ /* FINALS */
+            [[,], [,]],
+            [[,]]
+          ]]
+         }
+
+         // init the bracket
+         $('div#bracket').bracket({init: tournament});
+
+        });
+      </script>
     </div>
-
-    <h1>Losers Bracket</h1>
-    <div class="wrapper">
-      <div data-gracket='
-        [
-          [
-            [ {"name" : "Sqwarlock", "id" : "sqwarlock", "seed" : 7}, {"name" : "Oss", "id" : "oss", "seed" : 1} ],
-            [ {"name" : "Deathcrawler", "id" : "deathcrawler", "seed" : 3}, {"name" : "Qoof", "id" : "qoof", "seed" : 12} ],
-            [ {"name" : "Yuckster", "id" : "yuckster", "seed" : 11}, {"name" : "Selris", "id" : "selris", "seed" : 10} ],
-            [ {"name" : "Clammeat", "id" : "clammeat", "seed" : 14}, {"name" : "BYE", "id" : "bye", "seed" : 20} ]
-          ]
-        ]'>
-      </div>
-    </div>
-
-  </div>
-
-    <script type="text/javascript" src="/static/js/gracket_setup.js"></script>
 
   </div>
 </body>
