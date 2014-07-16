@@ -9,7 +9,7 @@ title: <reddit> Hearthstone Tournament Statistics
   <script src="/static/js/tablesorter.js"></script>
 </head>
 
-<body>
+<body onload="calcRatio">
   <div class="text-center">
     <h1>&lt;reddit&gt; Hearthstone Tournament Statistics</h1>
   </div>
@@ -36,9 +36,9 @@ title: <reddit> Hearthstone Tournament Statistics
 
       <tr>
         <td>Tizzycrusher</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.00</td>
+        <td>3</td>
+        <td>1</td>
+        <td>3.00</td>
       </tr>
 
       <tr>
@@ -78,9 +78,9 @@ title: <reddit> Hearthstone Tournament Statistics
 
       <tr>
         <td>Trulious</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.00</td>
+        <td>2</td>
+        <td>3</td>
+        <td>0.66</td>
       </tr>
 
       <tr>
@@ -92,9 +92,9 @@ title: <reddit> Hearthstone Tournament Statistics
 
       <tr>
         <td>Oss</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.00</td>
+        <td>1</td>
+        <td>3</td>
+        <td>0.33</td>
       </tr>
 
       <tr>
@@ -134,9 +134,9 @@ title: <reddit> Hearthstone Tournament Statistics
 
       <tr>
         <td>Romand</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.00</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1.50</td>
       </tr>
     </tbody>
   </table>
@@ -144,3 +144,15 @@ title: <reddit> Hearthstone Tournament Statistics
   <h5>Updated 7/14/14 10:14 PM CST</h5>
 
 </body>
+
+<script type="javascript">
+  function calcRatio()
+  {
+    var table = document.getElementById('tourney_stats');
+    var rows = table.rows;
+    for (var i = rows.length; i--;) {
+      var row = rows[i].cells;
+      row[3].textContent = "text";
+    }
+  }
+</script>
